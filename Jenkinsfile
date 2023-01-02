@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'npm install'
+                sh 'npm install --save-dev @cyclonedx/cyclonedx-npm && npm install && cyclonedx-npm --output-format JSON --output-file bom.json'
             }
         }
     }
