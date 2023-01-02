@@ -21,5 +21,13 @@ pipeline {
                 }
             }
         }
+        stage('Deploying Code in Production'){
+            steps {
+                input(message: 'Hello World!', ok: 'Submit')
+                    sh '''
+                        hostname
+                    '''
+            }
+        }
     }
 }
