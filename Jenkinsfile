@@ -8,6 +8,7 @@ pipeline {
     }
 
     stages {
+        stage ('PR') {
         scm {
             git {
                 remote {
@@ -42,6 +43,7 @@ pipeline {
                     completedStatus('FAILURE', 'Something went wrong. Investigate!')
                     completedStatus('PENDING', 'still in progress...')
                     completedStatus('ERROR', 'Something went really wrong. Investigate!')
+                    }
                 }
             }
         }
