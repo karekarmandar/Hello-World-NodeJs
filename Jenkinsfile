@@ -4,6 +4,7 @@ pipeline {
         docker {
             image 'node:16-alpine'
             args '-u root'
+            network 'my_network'
         }
     }
 
